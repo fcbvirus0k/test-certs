@@ -69,7 +69,7 @@ async function createOrUpdateCertificate (domain) {
           HTTP_01_TOKENS[`/.well-known/acme-challenge/${challenge.token}`] = keyAuthorization
           console.log(HTTP_01_TOKENS);
         } else if (challenge.type === 'dns-01') {
-          console.log('[@startupjs/server] certificateManager: dns-01 challenge is not supported')
+          console.log('certificateManager: dns-01 challenge is not supported')
         }
       },
       challengeRemoveFn: async (authz, challenge) => {
@@ -77,7 +77,7 @@ async function createOrUpdateCertificate (domain) {
           console.log('challengeRemoveFn');
           delete HTTP_01_TOKENS[`/.well-known/acme-challenge/${challenge.token}`]
         } else if (challenge.type === 'dns-01') {
-          console.log('[@startupjs/server] certificateManager: dns-01 challenge is not supported')
+          console.log('certificateManager: dns-01 challenge is not supported')
         }
       }
     }
